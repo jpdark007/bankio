@@ -1,4 +1,4 @@
-package test;
+package test.java.org.bankio;
 
 import junit.framework.TestCase;
 
