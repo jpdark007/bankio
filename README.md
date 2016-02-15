@@ -1,2 +1,2 @@
 # bankio
- A Java library for handle bank files formats.
+ A Java library to manage bank files formats such as CFBON120, CFONB160, SEPA  iso/20022 ... 
