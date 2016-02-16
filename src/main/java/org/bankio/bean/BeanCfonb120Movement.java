@@ -1,5 +1,6 @@
 package main.java.org.bankio.bean;
 
+import java.util.List;
 
 public class BeanCfonb120Movement {
 
@@ -42,6 +43,8 @@ public class BeanCfonb120Movement {
 	private String zone3;
 
 	private int idMvtGlobal;
+	
+    private List<BeanCfonb120Additional> additionals;
 
 	public String getTypeEnregistrementCode() {
 		return typeEnregistrementCode;
@@ -201,5 +204,13 @@ public class BeanCfonb120Movement {
 
 	public void setZone3(String zone3) {
 		this.zone3 = zone3;
+	}
+
+	public List<BeanCfonb120Additional> getAdditionals() {
+		return additionals;
+	}
+
+	public void setAdditionals(List<BeanCfonb120Additional> additionals) {
+		this.additionals = additionals;
 	}
 }

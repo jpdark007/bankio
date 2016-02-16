@@ -1,6 +1,8 @@
 package main.java.org.bankio.bean;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BeanCfonb160Recipient {
     String codeEnregistrement="06";
@@ -36,6 +38,8 @@ public class BeanCfonb160Recipient {
     String reserve3;
 
     private String iban;
+    
+    private List<BeanCfonb160Recipient> recipients = new ArrayList<BeanCfonb160Recipient>();
 
 	public String getIban() {
 		return iban;
@@ -147,4 +151,12 @@ public class BeanCfonb160Recipient {
     public void setDestinataireCodeEtablissement(String destinataireCodeEtablissement) {
         this.destinataireCodeEtablissement = destinataireCodeEtablissement;
     }
+
+	public List<BeanCfonb160Recipient> getRecipients() {
+		return recipients;
+	}
+
+	public void setRecipients(List<BeanCfonb160Recipient> recipients) {
+		this.recipients = recipients;
+	}
 }
