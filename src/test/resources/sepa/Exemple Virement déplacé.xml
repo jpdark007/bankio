@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+<CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>REF/789456/CCT123</MsgId> 
+<CreDtTm>2010-05-23T08:02:05</CreDtTm> 
+<NbOfTxs>2</NbOfTxs> 
+<CtrlSum>5008000</CtrlSum> 
+<InitgPty>
+<Nm>SHERCO Motor</Nm> 
+</InitgPty>
+<FwdgAgt>
+<FinInstnId>
+<BIC>BANQFR2L</BIC> 
+</FinInstnId>
+</FwdgAgt>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>BETA125</PmtInfId> 
+<PmtMtd>TRF</PmtMtd> 
+<NbOfTxs>2</NbOfTxs> 
+<CtrlSum>5008000</CtrlSum> 
+<PmtTpInf>
+<InstrPrty>NORM</InstrPrty>
+</PmtTpInf>
+<ReqdExctnDt>2010-05-23</ReqdExctnDt> 
+<Dbtr>
+<Nm>Societe ALPHA</Nm> 
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>FR7621479632145698745632145</IBAN> 
+</Id>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>BANKFRPP</BIC> 
+</FinInstnId>
+</DbtrAgt>
+<ChrgBr>DEBT</ChrgBr> 
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>Virement C803</InstrId> 
+<EndToEndId>SOC/4212/CCT123/01</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="USD">8000</InstdAmt> 
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>BBBBUS33</BIC> 
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>USA Society</Nm>
+<PstlAdr>
+<Ctry>US</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+  <Othr>
+  <Id>US29NWBK60161331926819</Id> 
+  </Othr>
+</Id>
+</CdtrAcct>
+<InstrForCdtrAgt>
+<Cd>PHOB</Cd> 
+</InstrForCdtrAgt>
+<Purp>
+<Cd>SCVE</Cd>
+</Purp>
+<RgltryRptg>
+<Dtls>
+<Cd>150</Cd> 
+</Dtls>
+</RgltryRptg>
+<RmtInf>
+<Ustrd>En reglement de la facture numero : 51575953</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>Virement C804</InstrId> 
+<EndToEndId>SOC/4212/CCT123/02</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="JPY">5000000</InstdAmt> 
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<ClrSysMmbId>
+<MmbId>BANKDEFF</MmbId> 
+</ClrSysMmbId> 
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>Japan Factory</Nm>
+<PstlAdr>
+<Ctry>JP</Ctry>
+</PstlAdr>
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>DE89370400440532013000</IBAN> 
+</Id>
+</CdtrAcct>
+<Purp>
+<Cd>SCVE</Cd>
+</Purp>
+<RgltryRptg>
+<Dtls>
+<Cd>150</Cd> 
+</Dtls>
+</RgltryRptg >
+<RmtInf>
+<Ustrd>En reglement des factures numeros : A54585652 B54585652 C54585652 D54585652</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>

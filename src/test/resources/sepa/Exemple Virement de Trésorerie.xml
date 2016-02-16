@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+<CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>DEF/081128/CCT001</MsgId> 
+<CreDtTm>2009-11-28T14:07:00</CreDtTm> 
+<NbOfTxs>2</NbOfTxs> 
+<CtrlSum>132827.12</CtrlSum> 
+<InitgPty>
+<Nm>Fantic SA</Nm> 
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>ghijk987654</PmtInfId> 
+<PmtMtd>TRF</PmtMtd> 
+<NbOfTxs>2</NbOfTxs> 
+<CtrlSum>132827.12</CtrlSum> 
+<PmtTpInf>
+<CtgyPurp>
+<Cd>TREA</Cd>
+</CtgyPurp>
+</PmtTpInf>
+<ReqdExctnDt>2009-11-28</ReqdExctnDt> 
+<Dbtr>
+<Nm>Fantic SA</Nm> 
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>FR763000036321456987456321145</IBAN> 
+</Id>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>BANQFRPP</BIC> 
+</FinInstnId>
+</DbtrAgt>
+<ChrgBr>SHAR</ChrgBr> 
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>ABC/081128/CCT001/1</InstrId> 
+<EndToEndId>ABC/4562/2009-11-28</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">100000</InstdAmt> 
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>BANQFRPP</BIC> 
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>Fantic Motor</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FR763000036321456987456322256</IBAN> 
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>virement tresorerie de novembre 2010 </Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>ABC/081128/CCT001/2</InstrId> 
+<EndToEndId>ABC/13679/2009-11-28</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">32827.12</InstdAmt> 
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>BANKFRPP</BIC> 
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>Fantic Bike</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FR1420041010050500013M02606</IBAN> 
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>virement de tresorerie sur accord du 15 mai 2010</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+ </CstmrCdtTrfInitn>
+</Document>

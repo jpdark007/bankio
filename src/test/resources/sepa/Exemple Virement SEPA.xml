@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+<CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>ABC/060928/CCT001</MsgId> 
+<CreDtTm>2006-09-28T14:07:00</CreDtTm> 
+<NbOfTxs>3</NbOfTxs> 
+<CtrlSum>187654.32</CtrlSum> 
+<InitgPty>
+<Nm>Franz Holzapfel GMBH</Nm> 
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>abcdef 12345</PmtInfId> 
+<PmtMtd>TRF</PmtMtd> 
+<BtchBookg>false</BtchBookg> 
+<NbOfTxs>3</NbOfTxs> 
+<CtrlSum>187654.32</CtrlSum> 
+<PmtTpInf>
+<SvcLvl>
+<Cd>SEPA</Cd> 
+</SvcLvl>
+</PmtTpInf>
+<ReqdExctnDt>2007-09-29</ReqdExctnDt> 
+<Dbtr>
+<Nm>Franz Holzapfel GMBH</Nm> 
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>AT611904300234573201</IBAN> 
+</Id>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>BKAUATWW</BIC> 
+</FinInstnId>
+</DbtrAgt>
+<ChrgBr>SLEV</ChrgBr> 
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>ABC/060928/CCT001/1</InstrId> 
+<EndToEndId>ABC/4562/2006-09-08</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">70000</InstdAmt> 
+</Amt>
+>
+<Cdtr>
+<Nm>DEF Electronics</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>GB29NWBK60161331926819</IBAN> 
+</Id>
+</CdtrAcct>
+<RgltryRptg>
+<Dtls>
+<Cd>150</Cd> 
+</Dtls>
+</RgltryRptg>
+<RmtInf>
+<Ustrd>Commercial invoice 4562 dated 2006-09-08</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>ABC/060928/CCT001/2</InstrId> 
+<EndToEndId>ABC/ABC-13679/2006-09-15</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">30000</InstdAmt> 
+</Amt>
+<Cdtr>
+<Nm>GHI Semiconductors</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>BE30001216371411</IBAN> 
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Commercial invoice ABC-13679 dated 2006-09-15</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>ABC/060928/CCT001/3</InstrId> 
+<EndToEndId>ABC/987-AC/2006-09-27</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">87654.32</InstdAmt> 
+</Amt>
+<Cdtr>
+<Nm>ABC Corporation</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FR1420041010050500013M02606</IBAN> 
+</Id>
+</CdtrAcct>
+<RmtInf>
+<Ustrd>Commercial invoice 987-AC dated 2006-09-27</Ustrd> 
+</RmtInf>
+</CdtTrfTxInf>
+</PmtInf>
+</CstmrCdtTrfInitn>
+</Document>

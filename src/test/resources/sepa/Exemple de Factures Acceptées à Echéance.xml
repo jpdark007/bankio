@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?> 
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.02">
+  <CstmrCdtTrfInitn>
+<GrpHdr>
+<MsgId>5861103</MsgId> 
+<CreDtTm>2010-01-07T15:30:00</CreDtTm> 
+<NbOfTxs>1</NbOfTxs> 
+<CtrlSum>24316.15</CtrlSum> 
+<InitgPty>
+<Nm>Societe DO</Nm>
+<PstlAdr>
+<Ctry>FR</Ctry>
+<AdrLine>25 rue Kilford, 92400 Courbevoie</AdrLine>
+</PstlAdr>
+<Id>
+<OrgId>
+<Othr>
+<Id>26919389631001</Id>
+</Othr>
+</OrgId>
+</Id>
+</InitgPty>
+</GrpHdr>
+<PmtInf>
+<PmtInfId>Z159951</PmtInfId> 
+<PmtMtd>TRF</PmtMtd> 
+<NbOfTxs>1</NbOfTxs> 
+<CtrlSum>24316.15</CtrlSum> 
+<PmtTpInf>
+<InstrPrty>NORM</InstrPrty>
+<LclInstrm>
+<Prtry>FAE</Prtry>
+</LclInstrm>
+</PmtTpInf>
+<ReqdExctnDt>2010-02-24</ReqdExctnDt> 
+<Dbtr>
+<Nm>Societe DO</Nm> 
+</Dbtr>
+<DbtrAcct>
+<Id>
+<IBAN>FR763004136210001234567811</IBAN> 
+</Id>
+</DbtrAcct>
+<DbtrAgt>
+<FinInstnId>
+<BIC>BANKFRPP</BIC> 
+</FinInstnId>
+</DbtrAgt>
+<ChrgBr>SLEV</ChrgBr> 
+<CdtTrfTxInf>
+<PmtId>
+<InstrId>XX1802596895</InstrId> 
+<EndToEndId>YY8999211743</EndToEndId> 
+</PmtId>
+<Amt>
+<InstdAmt Ccy="EUR">24316.15</InstdAmt> 
+</Amt>
+<CdtrAgt>
+<FinInstnId>
+<BIC>BANQFRPP</BIC> 
+</FinInstnId>
+</CdtrAgt>
+<Cdtr>
+<Nm>Fournisseur 1</Nm> 
+</Cdtr>
+<CdtrAcct>
+<Id>
+<IBAN>FR1420041010050500013M02606</IBAN> 
+</Id>
+</CdtrAcct>
+<RltdRmtInf>
+<RmtLctnMtd>EMAL</RmtLctnMtd>   <RmtLctnElctrnAdr>jean.dupond(at)fournisseur1.fr</RmtLctnElctrnAdr> 
+<RmtLctnPstlAdr>
+<Nm>fournisseur 1</Nm>
+<Adr>
+<AdrLine>19 rue de la republique service comptabilite 44100 Nantes</AdrLine> 
+</Adr>
+</RmtLctnPstlAdr> 
+</RltdRmtInf>
+<RmtInf>
+<Strd>
+<RfrdDocInf>
+<Tp>
+<CdOrPrtry>
+<Cd>CINV</Cd>
+</CdOrPrtry>
+</Tp>
+<Nb>78FD58</Nb>
+<RltdDt>2009-11-25</RltdDt>
+</RfrdDocInf>
+<RfrdDocAmt>
+<RmtdAmt Ccy="EUR">15625.35</RmtdAmt>
+</RfrdDocAmt>
+<CdtrRefInf>
+<Tp>
+<CdOrPrtry>
+<Cd>SCOR</Cd>
+</CdOrPrtry >
+</Tp>
+<Ref>F55922</Ref>
+</CdtrRefInf>
+</Strd>
+<Strd>
+<RfrdDocInf>
+<Tp>
+<CdOrPrtry>
+<Cd>CINV</Cd>
+</CdOrPrtry>
+</Tp>
+<Nb>559P2</Nb>
+<RltdDt>2009-11-14</RltdDt>
+</RfrdDocInf>
+<RfrdDocAmt>
+<RmtdAmt Ccy="EUR">8690.80</RmtdAmt>
+</RfrdDocAmt>
+<CdtrRefInf>
+<Tp>
+<CdOrPrtry>
+<Cd>SCOR</Cd>
+</CdOrPrtry>
+</Tp>
+<Ref>F69502</Ref>
+</CdtrRefInf>
+</Strd>
+ </RmtInf>
+  </CdtTrfTxInf>
+</PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
