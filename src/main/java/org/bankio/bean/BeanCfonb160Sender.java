@@ -2,7 +2,7 @@ package main.java.org.bankio.bean;
 
 import java.util.Date;
 
-public class BeanCFONBEmetteur {
+public class BeanCfonb160Sender {
     String codeEnregistrement="03";
 
     String codeOperation;

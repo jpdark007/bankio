@@ -2,7 +2,7 @@ package main.java.org.bankio.bean;
 
 import java.math.BigDecimal;
 
-public class BeanCFONBTotal {
+public class BeanCfonb160Total {
 	
     String codeEnregistrement="08";
 
