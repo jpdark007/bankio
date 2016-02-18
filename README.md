@@ -1,5 +1,13 @@
 # bankio
-##  A Java library to manage bank files formats such as CFBON120, CFONB160, SEPA  iso/20022 ... 
- 
-[![Build Status](https://travis-ci.org/jpdark007/bankio.svg?branch=master)](https://travis-ci.org/jpdark007/bankio)
+##  A Java library to manage file format for banking interchange such as CFBON120, CFONB160, SEPA  iso/20022 ... 
+ [![Build Status](https://travis-ci.org/jpdark007/bankio.svg?branch=master)](https://travis-ci.org/jpdark007/bankio)
 [![codecov.io](https://codecov.io/github/jpdark007/bankio/coverage.svg?branch=master)](https://codecov.io/github/jpdark007/bankio?branch=master)
+
+# Introduction
+[CFONB](http://fr.wikipedia.org/wiki/CFONB) are French legacy files formats for banking interchange, made by the CFONB (Comité français d'organisation et de normalisation bancaires). The specifications of CFONB files can be found on the [CFONB website](http://www.cfonb.org).
+
+Today France is supporting one single domestic credit transfer: the "Virement", which is supported by the format CFONB160 (fixed file of 160 characters).
+
+In addition to using a new format, migrating to [SEPA](https://en.wikipedia.org/wiki/Single_Euro_Payments_Area) needs some tools. Bankio is here to help you is this way.
+
+# Usage
