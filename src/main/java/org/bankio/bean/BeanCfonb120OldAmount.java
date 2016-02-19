@@ -28,8 +28,14 @@ public class BeanCfonb120OldAmount {
 
 	private String zone5;
 	
-	private String soldeSigne;
-
+	@Override
+	public String toString() {
+		return "BeanCfonb120OldAmount [typeEnregistrementCode=" + typeEnregistrementCode + ", codeBanque=" + codeBanque
+				+ ", zone1=" + zone1 + ", codeGuichet=" + codeGuichet + ", devise=" + devise + ", nbDecimal="
+				+ nbDecimal + ", zone2=" + zone2 + ", numCompte=" + numCompte + ", zone3=" + zone3 + ", soldeDate="
+				+ soldeDate + ", zone4=" + zone4 + ", soldeMontant=" + soldeMontant + ", zone5=" + zone5 + "]";
+	}
+	
 	public String getTypeEnregistrementCode() {
 		return typeEnregistrementCode;
 	}
@@ -92,14 +98,6 @@ public class BeanCfonb120OldAmount {
 
 	public void setSoldeMontant(String soldeMontant) {
 		this.soldeMontant = soldeMontant;
-	}
-
-	public String getSoldeSigne() {
-		return soldeSigne;
-	}
-
-	public void setSoldeSigne(String soldeSigne) {
-		this.soldeSigne = soldeSigne;
 	}
 
 	public String getZone1() {

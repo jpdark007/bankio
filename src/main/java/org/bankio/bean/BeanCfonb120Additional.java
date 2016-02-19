@@ -30,8 +30,6 @@ public class BeanCfonb120Additional {
 
 	private String zone3;
 	
-	private int idMvtGlobal;
-
 	public String getTypeEnregistrementCode() {
 		return typeEnregistrementCode;
 	}
@@ -118,14 +116,6 @@ public class BeanCfonb120Additional {
 
 	public void setLibelleDetail(String libelleDetail) {
 		this.libelleDetail = libelleDetail;
-	}
-
-	public int getIdMvtGlobal() {
-		return idMvtGlobal;
-	}
-
-	public void setIdMvtGlobal(int idMvtGlobal) {
-		this.idMvtGlobal = idMvtGlobal;
 	}
 
 	public String getZone1() {
