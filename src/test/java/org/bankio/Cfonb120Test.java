@@ -1,8 +1,8 @@
 package test.java.org.bankio;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,34 +21,34 @@ public class Cfonb120Test {
 	public static  void onceExecutedBeforeAll() {
 		BeanCfonb120OldAmount beanCfonb120OldAmount = new BeanCfonb120OldAmount();
 		beanCfonb120OldAmount.setTypeEnregistrementCode("01");
-		
-		List<BeanCfonb120Movement> beanCfonb120Movements = new ArrayList<BeanCfonb120Movement>();
-		
-		beanCfonb120Movements.add(generateMovements());		
-		beanCfonb120Movements.add(generateMovements());
+			
+		BeanCfonb120Movement beanCfonb120Movement = generateMovements("00010");
+		BeanCfonb120Movement beanCfonb120Movement2 = generateMovements("00011");
 		
 		BeanCfonb120NewAmount beanCfonb120NewAmount = new BeanCfonb120NewAmount();
 		beanCfonb120NewAmount.setTypeEnregistrementCode("07");
 		
 		beanCfonb120 = new BeanCfonb120();
 		beanCfonb120.setOldAmount(beanCfonb120OldAmount);
-		beanCfonb120.setMovements(beanCfonb120Movements);
+		beanCfonb120.addMovement(beanCfonb120Movement.hashCode(), beanCfonb120Movement);
+		beanCfonb120.addMovement(beanCfonb120Movement2.hashCode(), beanCfonb120Movement2);
+		beanCfonb120.addAdditionnalToMovement(beanCfonb120Movement.hashCode(), generateAdditionals());
+		beanCfonb120.addAdditionnalToMovement(beanCfonb120Movement2.hashCode(), generateAdditionals());
+
 		beanCfonb120.setNewAmount(beanCfonb120NewAmount);
 	}
 
-	private static BeanCfonb120Movement generateMovements() {
+	private static BeanCfonb120Movement generateMovements(String codeBanque) {
 		BeanCfonb120Movement beanCfonb120Movement = new BeanCfonb120Movement();
 		beanCfonb120Movement.setTypeEnregistrementCode("04");
-		beanCfonb120Movement.setAdditionals(generateAdditionals());
+		beanCfonb120Movement.setCodeBanque(codeBanque);
 		return beanCfonb120Movement;
 	}
 
-	private static List<BeanCfonb120Additional> generateAdditionals() {
-		List<BeanCfonb120Additional> beanCfonb120Additionals = new ArrayList<BeanCfonb120Additional>();
+	private static BeanCfonb120Additional generateAdditionals() {
 		BeanCfonb120Additional beanCfonb120Additional = new BeanCfonb120Additional();
 		beanCfonb120Additional.setTypeEnregistrementCode("05");
-		beanCfonb120Additionals.add(beanCfonb120Additional);
-		return beanCfonb120Additionals;
+		return beanCfonb120Additional;
 	}
 
 	@Test
@@ -62,16 +62,16 @@ public class Cfonb120Test {
 	@Test
 	public void testMovement() {
 		assertTrue(!beanCfonb120.getMovements().isEmpty());
-		List<BeanCfonb120Movement> beanCfonb120Movements =beanCfonb120.getMovements();
-		for (BeanCfonb120Movement beanCfonb120Movement : beanCfonb120Movements) {
+		HashMap<Integer, BeanCfonb120Movement> beanCfonb120Movements = beanCfonb120.getMovements();
+		for (BeanCfonb120Movement beanCfonb120Movement : beanCfonb120Movements.values()) {
 			assertEquals("04", beanCfonb120Movement.getTypeEnregistrementCode());
 		}
 	}
 	
 	@Test
 	public void testAdditional() {
-		List<BeanCfonb120Movement> beanCfonb120Movements =beanCfonb120.getMovements();
-		for (BeanCfonb120Movement beanCfonb120Movement : beanCfonb120Movements) {
+		HashMap<Integer, BeanCfonb120Movement> beanCfonb120Movements =beanCfonb120.getMovements();
+		for (BeanCfonb120Movement beanCfonb120Movement : beanCfonb120Movements.values()) {
 			List<BeanCfonb120Additional> beanCfonb120Additionals = beanCfonb120Movement.getAdditionals();
 			for (BeanCfonb120Additional beanCfonb120Additional : beanCfonb120Additionals) {
 				assertEquals("05", beanCfonb120Additional.getTypeEnregistrementCode());
