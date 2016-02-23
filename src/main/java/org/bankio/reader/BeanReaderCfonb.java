@@ -19,7 +19,7 @@ public class BeanReaderCfonb {
 	private static final String CFONB120 = "cfonb120";
 	private static final String CFONB120_XML = "cfonb120.xml";
 
-	public static void getBeanCfonb120FromFile(File file) throws BeanIOConfigurationException, IOException {
+	public static BeanCfonb120 getBeanCfonb120FromFile(File file) throws BeanIOConfigurationException, IOException {
 	        // create a StreamFactory
 	        StreamFactory factory = StreamFactory.newInstance();
 	        // load the mapping file
@@ -43,5 +43,6 @@ public class BeanReaderCfonb {
 				}
 	        }	        
 	        in.close();
+			return beanCfonb120;
 	    }
 }
