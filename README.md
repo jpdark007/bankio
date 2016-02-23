@@ -10,4 +10,17 @@ Today France is supporting one single domestic credit transfer: the "Virement", 
 
 In addition to using a new format, migrating to [SEPA](https://en.wikipedia.org/wiki/Single_Euro_Payments_Area) needs some tools. Bankio is here to help you is this way.
 
-# Usage
+# Format supported
+ - CFONB120 (almost done)
+ - CFONB160 (in progress)
+ - Customer Credit Transfer pain.001.001.03 (in study)
+## Usage
+## CFONB120 Reader
+```java
+BeanCfonb120 b = BeanReaderCfonb.getBeanCfonb120FromFile(new File("myPath"));
+```
+## CFONB120 writer
+```java
+BeanReaderCfonb myBean ....
+BeanWriterCfonb.setBeanCfonb120ToFile(myBean);
+```
