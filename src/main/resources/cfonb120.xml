@@ -21,9 +21,7 @@
 			<field name="zone5" length="16" />
 		</record>
 
-		<!-- Detail records are bound toBeanCfonb120Movement -->
 		<record name="beanCfonb120Movement" class="main.java.org.bankio.bean.BeanCfonb120Movement" occurs="0+">
-			<!-- 'ignore' indicates this field is not bound to a bean property -->
 			<field name="typeEnregistrementCode" rid="true" literal="04" length="2" />
             <field name="codeBanque" length="5" />
             <field name="operationInterneCode" length="4" />
@@ -45,9 +43,7 @@
             <field name="zone3" length="16" />
 		</record>
 
-        <!-- Detail records are bound toBeanCfonb120Movement -->
         <record name="beanCfonb120Additional" class="main.java.org.bankio.bean.BeanCfonb120Additional" occurs="0+">
-            <!-- 'ignore' indicates this field is not bound to a bean property -->
             <field name="typeEnregistrementCode" rid="true" literal="05" length="2" />
             <field name="codeBanque" length="5" />
             <field name="operationInterneCode" length="4" />
@@ -65,7 +61,6 @@
         </record>
 
         <record name="beanCfonb120NewAmount" class="main.java.org.bankio.bean.BeanCfonb120NewAmount" occurs="1">
-            <!-- 'rid' indicates this field is used to identify the record -->
             <field name="typeEnregistrementCode" rid="true" literal="07" length="2" />
             <field name="codeBanque" length="5" />
             <field name="zone1" length="4" />
