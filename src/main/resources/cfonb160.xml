@@ -1,0 +1,82 @@
+<beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+  
+	<!-- 'format' identifies the type of stream -->
+	<stream name="cfonb160" format="fixedlength">
+		<!-- 'class' binds the header record to a BeanCfonb160Sender -->
+		<record name="BeanCfonb160Sender" class="main.java.org.bankio.bean.BeanCfonb160Sender" occurs="1">
+			<!-- 'rid' indicates this field is used to identify the record -->
+			<field name="codeEnregistrement" rid="true" literal="03" length="2" />
+			<field name="codeOperation" length="2" />
+			<field name="zone1" length="8" />
+			<field name="numeroEmetteur" length="6" />
+			<field name="reserve2" length="1" />
+			<field name="reserve3" length="6" />
+			<field name="dateReglement" length="5" />
+			<field name="nomRemettant" length="24" />
+			<field name="referenceRemiseClient" length="7" />
+			<field name="reserve4" length="17" />
+			<field name="reserve5" length="2" />
+			<field name="indiceMonnaieOrigine" length="1" />
+			<field name="reserve6" length="5" />
+			<field name="emetteurCodeGuichet" length="5" />
+			<field name="emetteurNumeroCompte" length="11" />
+			<field name="reserve7" length="16" />
+			<field name="reserve8" length="31" />
+			<field name="emetteurCodeEtablissement" length="5" />
+			<field name="reserve9" length="6" />
+			
+		</record>
+
+		<record name="BeanCfonb160Recipient" class="main.java.org.bankio.bean.BeanCfonb160Recipient" occurs="1+">
+			<field name="codeEnregistrement" rid="true" literal="06" length="2" />
+            <field name="codeOperation" length="2" />
+            <field name="reserve1" length="8" />
+            <field name="numeroEmetteur" length="6" />
+            <field name="referenceOperation" length="12" />
+            <field name="nomDestinataire" length="24" />
+            <field name="libelleDomiciliation" length="24" />
+            <field name="balance" length="8" />
+            <field name="destinataireCodeGuichet" length="5" />
+            <field name="destinataireNumeroCompte"  length="11" />
+            <field name="montantVirement" length="16" />
+            <field name="libelle" length="31" />
+            <field name="destinataireCodeEtablissement" length="5" />
+            <field name="reserve2" length="6" />
+		</record>
+
+        <record name="BeanCfonb160RecipientAdditional" class="main.java.org.bankio.bean.BeanCfonb160Recipient" occurs="0+">
+            <field name="codeEnregistrement" rid="true" literal="07" length="2" />
+            <field name="codeOperation" length="2" />
+            <field name="reserve1" length="8" />
+            <field name="numeroEmetteur" length="6" />
+            <field name="referenceOperation" length="12" />
+            <field name="nomDestinataire" length="24" />
+            <field name="libelleDomiciliation" length="24" />
+            <field name="balance" length="8" />
+            <field name="destinataireCodeGuichet" length="5" />
+            <field name="destinataireNumeroCompte"  length="11" />
+            <field name="montantVirement" length="16" />
+            <field name="libelle" length="31" />
+            <field name="destinataireCodeEtablissement" length="5" />
+            <field name="reserve2" length="6" />
+        </record>
+
+        <record name="BeanCfonb160Total" class="main.java.org.bankio.bean.BeanCfonb160Total" occurs="1">
+            <field name="codeEnregistrement" rid="true" literal="08" length="2" />
+            <field name="codeOperation" length="2" />
+            <field name="reserve1" length="8" />
+            <field name="numeroEmetteur" length="6" />
+            <field name="reserve2" length="12" />
+            <field name="reserve3" length="24" />
+            <field name="reserve4" length="24" />
+            <field name="reserve5" length="8" />
+            <field name="reserve6" length="5" />
+            <field name="reserve7"  length="11" />
+            <field name="montantTotalRemise" length="16" />
+            <field name="reserve8" length="31" />
+            <field name="reserve9" length="5" />
+             <field name="reserve10" length="6" />
+        </record>
+	</stream>
+</beanio>
