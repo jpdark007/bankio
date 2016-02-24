@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 
 import main.java.org.bankio.bean.BeanCfonb160;
 import main.java.org.bankio.bean.BeanCfonb160Recipient;
+import main.java.org.bankio.bean.BeanCfonb160RecipientAdditional;
 import main.java.org.bankio.bean.BeanCfonb160Sender;
 import main.java.org.bankio.bean.BeanCfonb160Total;
 
@@ -25,13 +26,10 @@ public class Cfonb160Test {
 		BeanCfonb160Recipient beanCfonb160Recipient = new  BeanCfonb160Recipient();
 		beanCfonb160Recipient.setCodeEnregistrement("06");
 		
-		List<BeanCfonb160Recipient> recipientsAdd = new ArrayList<BeanCfonb160Recipient>();
-		BeanCfonb160Recipient beanCfonb160Recipient2 = new  BeanCfonb160Recipient();
-		beanCfonb160Recipient2.setCodeEnregistrement("07");
-		recipientsAdd.add(beanCfonb160Recipient2);
-		
-		beanCfonb160Recipient.setRecipients(recipientsAdd);
-		
+		BeanCfonb160RecipientAdditional beanCfonb160RecipientAdditional = new  BeanCfonb160RecipientAdditional();
+		beanCfonb160RecipientAdditional.setCodeEnregistrement("07");
+		beanCfonb160Recipient.setRecipientAdditional(beanCfonb160RecipientAdditional);
+				
 		BeanCfonb160Total beanCfonb160Total = new BeanCfonb160Total();
 		beanCfonb160Total.setCodeEnregistrement("08");
 		
@@ -53,11 +51,8 @@ public class Cfonb160Test {
 	public void testRecipients() {
 		List<BeanCfonb160Recipient> beanCfonb160Recipients = beanCfonb160.getRecipients();
 		for (BeanCfonb160Recipient beanCfonb160Recipient : beanCfonb160Recipients) {
-			List<BeanCfonb160Recipient> beanCfonb160RecipientsAdd = beanCfonb160Recipient.getRecipients();
 			assertEquals("06", beanCfonb160Recipient.getCodeEnregistrement());
-			for (BeanCfonb160Recipient beanCfonb160Recipient2 : beanCfonb160RecipientsAdd) {
-				assertEquals("07", beanCfonb160Recipient2.getCodeEnregistrement());
-			}
+			assertEquals("07", beanCfonb160Recipient.getRecipient().getCodeEnregistrement());
 		}
 	}
 	
