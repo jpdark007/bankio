@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BeanCfonb160Recipient {
+public class BeanCfonb160RecipientAdditional {
 
-	private String codeEnregistrement ="06";
+	private String codeEnregistrement ="07";
 
 	private String codeOperation;
 
@@ -33,42 +33,6 @@ public class BeanCfonb160Recipient {
 	private String destinataireCodeEtablissement;
 
 	private String reserve2;
-	
-	private BeanCfonb160RecipientAdditional recipientAdditional;
-    
-    public String getReserve1() {
-		return reserve1;
-	}
-
-	public void setReserve1(String reserve1) {
-		this.reserve1 = reserve1;
-	}
-
-	public String getBalance() {
-		return balance;
-	}
-
-	public void setBalance(String balance) {
-		this.balance = balance;
-	}
-
-	public String getReserve3() {
-		return reserve2;
-	}
-
-	public void setReserve3(String reserve3) {
-		this.reserve2 = reserve3;
-	}
-
-	public BeanCfonb160RecipientAdditional getRecipient() {
-		return recipient;
-	}
-
-	public void setRecipient(BeanCfonb160RecipientAdditional recipient) {
-		this.recipient = recipient;
-	}
-
-	private BeanCfonb160RecipientAdditional recipient;
 
     public String getCodeEnregistrement() {
         return codeEnregistrement;
@@ -118,15 +82,15 @@ public class BeanCfonb160Recipient {
         this.libelleDomiciliation = libelleDomiciliation;
     }
 
-    public String getCodeNatureVirement() {
-        return balance;
-    }
+    public String getBalance() {
+		return balance;
+	}
 
-    public void setCodeNatureVirement(String codeNatureVirement) {
-        this.balance = codeNatureVirement;
-    }
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
 
-    public String getDestinataireCodeGuichet() {
+	public String getDestinataireCodeGuichet() {
         return destinataireCodeGuichet;
     }
 
@@ -166,11 +130,19 @@ public class BeanCfonb160Recipient {
         this.destinataireCodeEtablissement = destinataireCodeEtablissement;
     }
 
-	public BeanCfonb160RecipientAdditional getRecipientAdditional() {
-		return recipientAdditional;
+	public String getReserve1() {
+		return reserve1;
 	}
 
-	public void setRecipientAdditional(BeanCfonb160RecipientAdditional recipientAdditional) {
-		this.recipientAdditional = recipientAdditional;
+	public void setReserve1(String reserve1) {
+		this.reserve1 = reserve1;
+	}
+
+	public String getReserve2() {
+		return reserve2;
+	}
+
+	public void setReserve2(String reserve2) {
+		this.reserve2 = reserve2;
 	}
 }
