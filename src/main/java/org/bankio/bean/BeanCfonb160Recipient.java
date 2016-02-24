@@ -1,8 +1,6 @@
 package main.java.org.bankio.bean;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BeanCfonb160Recipient {
 
