@@ -1,6 +1,7 @@
 package test.java.org.bankio;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -22,7 +23,6 @@ public class Cfonb160Test {
 		BeanCfonb160Sender beanCfonb160Sender = new BeanCfonb160Sender();
 		beanCfonb160Sender.setCodeEnregistrement("03");
 		
-		List<BeanCfonb160Recipient> recipients = new ArrayList<BeanCfonb160Recipient>();
 		BeanCfonb160Recipient beanCfonb160Recipient = new  BeanCfonb160Recipient();
 		beanCfonb160Recipient.setCodeEnregistrement("06");
 		
@@ -34,7 +34,7 @@ public class Cfonb160Test {
 		beanCfonb160Total.setCodeEnregistrement("08");
 		
 		beanCfonb160 = new BeanCfonb160();
-		beanCfonb160.setRecipients(recipients);
+		beanCfonb160.addRecipient(beanCfonb160Recipient.hashCode(), beanCfonb160Recipient);
 		beanCfonb160.setSender(beanCfonb160Sender);
 		beanCfonb160.setTotal(beanCfonb160Total);
 	}
@@ -49,10 +49,10 @@ public class Cfonb160Test {
 	
 	@Test
 	public void testRecipients() {
-		List<BeanCfonb160Recipient> beanCfonb160Recipients = beanCfonb160.getRecipients();
-		for (BeanCfonb160Recipient beanCfonb160Recipient : beanCfonb160Recipients) {
+		HashMap<Integer, BeanCfonb160Recipient> beanCfonb160Recipients = beanCfonb160.getRecipients();
+		for (BeanCfonb160Recipient beanCfonb160Recipient : beanCfonb160Recipients.values()) {
 			assertEquals("06", beanCfonb160Recipient.getCodeEnregistrement());
-			assertEquals("07", beanCfonb160Recipient.getRecipient().getCodeEnregistrement());
+			assertEquals("07", beanCfonb160Recipient.getRecipientAdditional().getCodeEnregistrement());
 		}
 	}
 	
