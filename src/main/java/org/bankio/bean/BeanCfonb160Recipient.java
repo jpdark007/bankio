@@ -34,7 +34,9 @@ public class BeanCfonb160Recipient {
 	
 	private BeanCfonb160RecipientAdditional recipientAdditional;
     
-    @Override
+
+
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -50,7 +52,6 @@ public class BeanCfonb160Recipient {
 		result = prime * result + ((montantVirement == null) ? 0 : montantVirement.hashCode());
 		result = prime * result + ((nomDestinataire == null) ? 0 : nomDestinataire.hashCode());
 		result = prime * result + ((numeroEmetteur == null) ? 0 : numeroEmetteur.hashCode());
-		result = prime * result + ((recipient == null) ? 0 : recipient.hashCode());
 		result = prime * result + ((recipientAdditional == null) ? 0 : recipientAdditional.hashCode());
 		result = prime * result + ((referenceOperation == null) ? 0 : referenceOperation.hashCode());
 		result = prime * result + ((reserve1 == null) ? 0 : reserve1.hashCode());
@@ -122,11 +123,6 @@ public class BeanCfonb160Recipient {
 				return false;
 		} else if (!numeroEmetteur.equals(other.numeroEmetteur))
 			return false;
-		if (recipient == null) {
-			if (other.recipient != null)
-				return false;
-		} else if (!recipient.equals(other.recipient))
-			return false;
 		if (recipientAdditional == null) {
 			if (other.recipientAdditional != null)
 				return false;
@@ -173,16 +169,6 @@ public class BeanCfonb160Recipient {
 	public void setReserve3(String reserve3) {
 		this.reserve2 = reserve3;
 	}
-
-	public BeanCfonb160RecipientAdditional getRecipient() {
-		return recipient;
-	}
-
-	public void setRecipient(BeanCfonb160RecipientAdditional recipient) {
-		this.recipient = recipient;
-	}
-
-	private BeanCfonb160RecipientAdditional recipient;
 
     public String getCodeEnregistrement() {
         return codeEnregistrement;
