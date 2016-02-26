@@ -19,7 +19,7 @@ import main.java.org.bankio.bean.BeanCfonb160RecipientAdditional;
 import main.java.org.bankio.bean.BeanCfonb160Sender;
 import main.java.org.bankio.bean.BeanCfonb160Total;
 
-public class BeanReaderCfonb {
+public class ReaderCfonb {
 	
 	private static final String CFONB120 = "cfonb120";
 	private static final String CFONB120_XML = "cfonb120.xml";
@@ -30,7 +30,7 @@ public class BeanReaderCfonb {
 	        // create a StreamFactory
 	        StreamFactory factory = StreamFactory.newInstance();
 	        // load the mapping file
-	        factory.load(BeanReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB120_XML));
+	        factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB120_XML));
 	        	        
 	        BeanReader in = factory.createReader(CFONB120,   new InputStreamReader(new FileInputStream(file)));
 	        Object record = null;
@@ -57,7 +57,7 @@ public class BeanReaderCfonb {
         // create a StreamFactory
         StreamFactory factory = StreamFactory.newInstance();
         // load the mapping file
-        factory.load(BeanReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB160_XML));
+        factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB160_XML));
         	        
         BeanReader in = factory.createReader(CFONB160,   new InputStreamReader(new FileInputStream(file)));
         Object record = null;
