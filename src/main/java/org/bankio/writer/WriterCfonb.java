@@ -25,16 +25,17 @@ public class WriterCfonb {
 	private static final String CFONB160 = "cfonb160";
 	private static final String CFONB160_XML = "cfonb160.xml";
 	
-	public static void setBeanCfonb120ToFile(BeanCfonb120 beanCfonb120) throws BeanIOConfigurationException, IOException {
+	public static File setBeanCfonb120ToFile(BeanCfonb120 beanCfonb120) throws BeanIOConfigurationException, IOException {
 	        // create a StreamFactory
 	        StreamFactory factory = StreamFactory.newInstance();
 	        factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB120_XML));
 	        
 	        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	        Date date = new Date();
-	        
+	        File outputFile = new File(CFONB120 + dateFormat.format(date));
+	        	        
 	        // set writer mapping file
-	        BeanWriter writer = factory.createWriter(CFONB120, new File(CFONB120 + dateFormat.format(date)));
+	        BeanWriter writer = factory.createWriter(CFONB120,outputFile );
 	        
 	        writer.write(beanCfonb120.getOldAmount());
 	        
@@ -50,18 +51,21 @@ public class WriterCfonb {
 	        writer.write(beanCfonb120.getNewAmount());
 	        
 	        closeWriter(writer);
+	        
+	        return outputFile; 
 	    }
 
-	public static void setBeanCfonb160ToFile(BeanCfonb160 beanCfonb160) throws BeanIOConfigurationException, IOException {
+	public static File setBeanCfonb160ToFile(BeanCfonb160 beanCfonb160) throws BeanIOConfigurationException, IOException {
         // create a StreamFactory
         StreamFactory factory = StreamFactory.newInstance();
         factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB160_XML));
         
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         Date date = new Date();
+        File outputFile = new File(CFONB160 + dateFormat.format(date));
         
         // set writer mapping file
-        BeanWriter writer = factory.createWriter(CFONB160, new File(CFONB160 + dateFormat.format(date)));
+        BeanWriter writer = factory.createWriter(CFONB160, outputFile);
         
         writer.write(beanCfonb160.getSender());
         
@@ -74,6 +78,8 @@ public class WriterCfonb {
         writer.write(beanCfonb160.getTotal());
         
         closeWriter(writer);
+        
+        return outputFile; 
     }
 	
 	private static void closeWriter(BeanWriter writer) {
