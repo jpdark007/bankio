@@ -41,6 +41,7 @@ public class Cfonb120Test {
 		BeanCfonb120Movement beanCfonb120Movement = new BeanCfonb120Movement();
 		beanCfonb120Movement.setTypeEnregistrementCode("04");
 		beanCfonb120Movement.setCodeBanque(codeBanque);
+		beanCfonb120Movement.setOperationInterneCode("000");
 		return beanCfonb120Movement;
 	}
 
@@ -56,6 +57,8 @@ public class Cfonb120Test {
 		assertNotNull(beanCfonb120.getMovements());
 		assertNotNull(beanCfonb120.getNewAmount());
 		assertNotNull(beanCfonb120.getOldAmount());
+		assertTrue(beanCfonb120.equals(beanCfonb120));
+		assertEquals(beanCfonb120.toString(), beanCfonb120.toString());
 	}
 	
 	@Test
