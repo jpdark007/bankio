@@ -12,7 +12,7 @@
 			<field name="numeroEmetteur" length="6" />
 			<field name="reserve2" length="1" />
 			<field name="reserve3" length="6" />
-			<field name="dateReglement" length="5" />
+			<field name="dateReglement" length="5" type="date" format="ddMMy"/>
 			<field name="nomRemettant" length="24" />
 			<field name="referenceRemiseClient" length="7" />
 			<field name="reserve4" length="17" />
