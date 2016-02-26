@@ -15,7 +15,7 @@
 			<field name="zone2" length="1" />
 			<field name="numCompte" length="11" />
 			<field name="zone3" length="2" />
-			<field name="soldeDate" length="6" />
+			<field name="soldeDate" length="6" type="date" format="ddMMyy"/>
 			<field name="zone4" length="50" />
 			<field name="soldeMontant" length="14" />
 			<field name="zone5" length="16" />
@@ -31,9 +31,9 @@
             <field name="zone1" length="1" />
             <field name="numCompte" length="11" />
             <field name="operationInterBancCode" length="2" />
-            <field name="operationDate" length="6" />
+            <field name="operationDate" length="6" type="date" format="ddMMyy" />
             <field name="rejetMotifCode" length="2" />
-            <field name="valeurDate"  length="6" />
+            <field name="valeurDate"  length="6"  type="date" format="ddMMyy"/>
             <field name="libelle" length="31" />
             <field name="zone2" length="2" />
             <field name="numEcriture" length="7" />
@@ -53,7 +53,7 @@
             <field name="zone1" length="1" />
             <field name="numCompte" length="11" />
             <field name="operationInterBancCode" length="2" />
-            <field name="operationDate" length="6" />
+            <field name="operationDate" length="6"  type="date" format="ddMMyy"/>
             <field name="zone2" length="5" />
             <field name="qualifiantDetail" length="3" />
             <field name="libelleDetail" length="70" />
@@ -70,7 +70,7 @@
             <field name="zone2" length="1" />
             <field name="numCompte" length="11" />
             <field name="zone3" length="2" />
-            <field name="soldeDate"  length="6" />
+            <field name="soldeDate"  length="6"  type="date" format="ddMMyy"/>
             <field name="zone4" length="50" />
             <field name="soldeMontant" length="14" />
             <field name="zone5" length="16" />
