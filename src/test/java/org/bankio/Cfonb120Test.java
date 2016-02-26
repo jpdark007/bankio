@@ -1,7 +1,11 @@
 package test.java.org.bankio;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+
+import org.beanio.BeanIOConfigurationException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -11,6 +15,7 @@ import main.java.org.bankio.bean.BeanCfonb120Additional;
 import main.java.org.bankio.bean.BeanCfonb120Movement;
 import main.java.org.bankio.bean.BeanCfonb120NewAmount;
 import main.java.org.bankio.bean.BeanCfonb120OldAmount;
+import main.java.org.bankio.writer.WriterCfonb;
 
 public class Cfonb120Test {
 	
@@ -41,7 +46,7 @@ public class Cfonb120Test {
 		BeanCfonb120Movement beanCfonb120Movement = new BeanCfonb120Movement();
 		beanCfonb120Movement.setTypeEnregistrementCode("04");
 		beanCfonb120Movement.setCodeBanque(codeBanque);
-		beanCfonb120Movement.setOperationInterneCode("000");
+		beanCfonb120Movement.setOperationInterneCode("00000000000000000000000");
 		return beanCfonb120Movement;
 	}
 
@@ -52,13 +57,18 @@ public class Cfonb120Test {
 	}
 
 	@Test
-	public void testCfonb120() {
+	public void testCfonb120() throws BeanIOConfigurationException, IOException {
 		assertNotNull(beanCfonb120);
 		assertNotNull(beanCfonb120.getMovements());
 		assertNotNull(beanCfonb120.getNewAmount());
 		assertNotNull(beanCfonb120.getOldAmount());
 		assertTrue(beanCfonb120.equals(beanCfonb120));
 		assertEquals(beanCfonb120.toString(), beanCfonb120.toString());
+		
+		File output = WriterCfonb.setBeanCfonb120ToFile(beanCfonb120);
+		assertTrue(output.exists());
+		assertTrue(output.isFile());
+		assertTrue(output.delete());
 	}
 	
 	@Test
