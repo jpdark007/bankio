@@ -1,78 +1,81 @@
 <beanio xmlns="http://www.beanio.org/2012/03" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
   
+  <!-- les zones numériques sont cadrées à droite et complétées si besoin à zéro, les zones
+alphanumériques et alphabétiques sont cadrées à gauche et complétées si besoin à blanc -->
+
 	<!-- 'format' identifies the type of stream -->
 	<stream name="cfonb120" format="fixedlength">
 		<!-- 'class' binds the header record to a BeanCfonb120OldAmount -->
 		<record name="beanCfonb120OldAmount" class="main.java.org.bankio.bean.BeanCfonb120OldAmount" occurs="1">
 			<!-- 'rid' indicates this field is used to identify the record -->
-			<field name="typeEnregistrementCode" rid="true" literal="01" length="2" />
-			<field name="codeBanque" length="5"  justify="right" padding="0"/>
-			<field name="zone1" length="4"  justify="right" padding="0"/>
-			<field name="codeGuichet" length="5" justify="right" padding="0" />
-			<field name="devise" length="3"  justify="right" padding="0"/>
-			<field name="nbDecimal" length="1" justify="right" padding="0" />
-			<field name="zone2" length="1"  justify="right" padding="0"/>
-			<field name="numCompte" length="11"  justify="right" padding="0"/>
-			<field name="zone3" length="2"  justify="right" padding="0"/>
-			<field name="soldeDate" length="6" type="date" format="ddMMyy"/>
+			<field name="typeEnregistrementCode" rid="true" literal="01" length="2" required="true"/>
+			<field name="codeBanque" length="5"  justify="right" padding="0" required="true"/>
+			<field name="zone1" length="4" />
+			<field name="codeGuichet" length="5" justify="right" padding="0"  required="true"/>
+			<field name="devise" length="3"  justify="right" required="true"/>
+			<field name="nbDecimal" length="1" justify="right" padding="0" required="true"/>
+			<field name="zone2" length="1" />
+			<field name="numCompte" length="11"  justify="right" padding="0" required="true"/>
+			<field name="zone3" length="2" />
+			<field name="soldeDate" length="6" type="date" format="ddMMyy"  required="true"/>
 			<field name="zone4" length="50" />
-			<field name="soldeMontant" length="14" />
+			<field name="soldeMontant" length="14"   justify="right" padding="0" required="true"/>
 			<field name="zone5" length="16" />
 		</record>
 
 		<record name="beanCfonb120Movement" class="main.java.org.bankio.bean.BeanCfonb120Movement" occurs="0+">
-			<field name="typeEnregistrementCode" rid="true" literal="04" length="2" />
-            <field name="codeBanque" length="5" />
-            <field name="operationInterneCode" length="4" />
-            <field name="codeGuichet" length="5" />
-            <field name="devise" length="3" />
-            <field name="nbDecimal" length="1" />
+			<field name="typeEnregistrementCode" rid="true" literal="04" length="2" required="true"/>
+            <field name="codeBanque" length="5" justify="right" padding="0" required="true"/>
+            <field name="operationInterneCode" length="4" justify="right" padding="0" required="true"/>
+            <field name="codeGuichet" length="5" justify="right" padding="0" required="true"/>
+            <field name="devise" length="3" /> <!-- norme ISO4217 (NF K 10 020)) -->
+            <field name="nbDecimal" length="1" justify="right" padding="0" required="true"/>
             <field name="zone1" length="1" />
-            <field name="numCompte" length="11" />
-            <field name="operationInterBancCode" length="2" />
+            <field name="numCompte" length="11" required="true"/>
+            <field name="operationInterBancCode" length="2"  justify="right" padding="0" required="true"/>
             <field name="operationDate" length="6" type="date" format="ddMMyy" />
-            <field name="rejetMotifCode" length="2" />
+            <field name="rejetMotifCode" length="2" /> <!-- (voir brochure CFONB "Liste interbancaire des codes motif de rejets") -->
             <field name="valeurDate"  length="6"  type="date" format="ddMMyy"/>
-            <field name="libelle" length="31" />
+            <field name="libelle" length="31"  required="true"/>
             <field name="zone2" length="2" />
-            <field name="numEcriture" length="7" />
+            <field name="numEcriture" length="7" justify="right" padding="0" required="true" />
             <field name="indiceExoneration" length="1" />
             <field name="indiceIndispo" length="1" />
-            <field name="montantMvt" length="14" />
+            <field name="montantMvt" length="14" justify="right" padding="0" required="true" />
             <field name="zone3" length="16" />
 		</record>
 
         <record name="beanCfonb120Additional" class="main.java.org.bankio.bean.BeanCfonb120Additional" occurs="0+">
-            <field name="typeEnregistrementCode" rid="true" literal="05" length="2" />
-            <field name="codeBanque" length="5" />
+            <field name="typeEnregistrementCode" rid="true" literal="05" length="2" required="true" />
+            <field name="codeBanque" length="5"  justify="right" padding="0" required="true"/>
             <field name="operationInterneCode" length="4" />
-            <field name="codeGuichet" length="5" />
-            <field name="devise" length="3" />
-            <field name="nbDecimal" length="1" />
+            <field name="codeGuichet" length="5"  justify="right" padding="0" required="true"/>
+            <field name="devise" length="3" required="true" />
+            <field name="nbDecimal" length="1"  justify="right" padding="0" required="true"/>
             <field name="zone1" length="1" />
-            <field name="numCompte" length="11" />
-            <field name="operationInterBancCode" length="2" />
-            <field name="operationDate" length="6"  type="date" format="ddMMyy"/>
+            <field name="numCompte" length="11" required="true"/>
+            <field name="operationInterBancCode" length="2" required="true"/>
+            <field name="operationDate" length="6"  type="date" format="ddMMyy" required="true"/>
             <field name="zone2" length="5" />
-            <field name="qualifiantDetail" length="3" />
-            <field name="libelleDetail" length="70" />
+            <field name="qualifiantDetail" length="3" required="true" />
+            <field name="libelleDetail" length="70" required="true"/>
             <field name="zone3" length="2" />
         </record>
 
         <record name="beanCfonb120NewAmount" class="main.java.org.bankio.bean.BeanCfonb120NewAmount" occurs="1">
-            <field name="typeEnregistrementCode" rid="true" literal="07" length="2" />
-            <field name="codeBanque" length="5" />
+            <field name="typeEnregistrementCode" rid="true" literal="07" length="2" required="true"/>
+            <field name="codeBanque" length="5"  justify="right" padding="0" required="true"/>
             <field name="zone1" length="4" />
-            <field name="codeGuichet" length="5" />
-            <field name="devise" length="3" />
-            <field name="nbDecimal" length="1" />
+            <field name="codeGuichet" length="5" justify="right" padding="0" required="true" />
+            <field name="devise" length="3" required="true"/>
+            <field name="nbDecimal" length="1"  justify="right" padding="0" required="true"/>
             <field name="zone2" length="1" />
-            <field name="numCompte" length="11" />
+            <field name="numCompte" length="11" required="true"/>
             <field name="zone3" length="2" />
-            <field name="soldeDate"  length="6"  type="date" format="ddMMyy"/>
+            <field name="soldeDate"  length="6"  type="date" format="ddMMyy" required="true"/>
             <field name="zone4" length="50" />
-            <field name="soldeMontant" length="14" />
+            <field name="soldeMontant" length="14"  justify="right" padding="0" required="true"/>
             <field name="zone5" length="16" />
         </record>
 	</stream>
