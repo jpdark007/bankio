@@ -2,8 +2,10 @@ package test.java.org.bankio;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import org.beanio.BeanIOConfigurationException;
 import org.junit.BeforeClass;
@@ -15,22 +17,46 @@ import main.java.org.bankio.bean.BeanCfonb120Additional;
 import main.java.org.bankio.bean.BeanCfonb120Movement;
 import main.java.org.bankio.bean.BeanCfonb120NewAmount;
 import main.java.org.bankio.bean.BeanCfonb120OldAmount;
+import main.java.org.bankio.reader.ReaderCfonb;
 import main.java.org.bankio.writer.WriterCfonb;
 
 public class Cfonb120Test {
 	
 	private static BeanCfonb120 beanCfonb120;
+		
+	private static String getRandomNum() {
+		Random rand = new Random();
+		return String.valueOf(rand.nextInt(500000000) + 1);
+	}
+	
+	private static String getRandomAlphaNum() {
+		return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	}
 	
 	@BeforeClass
 	public static  void onceExecutedBeforeAll() {
 		BeanCfonb120OldAmount beanCfonb120OldAmount = new BeanCfonb120OldAmount();
 		beanCfonb120OldAmount.setTypeEnregistrementCode("01");
+		beanCfonb120OldAmount.setSoldeDate(new Date());
+		beanCfonb120OldAmount.setNumCompte(getRandomAlphaNum());
+		beanCfonb120OldAmount.setCodeBanque(getRandomNum());
+		beanCfonb120OldAmount.setDevise(getRandomAlphaNum());
+		beanCfonb120OldAmount.setCodeGuichet(getRandomNum());
+		beanCfonb120OldAmount.setSoldeMontant(getRandomNum());
+		beanCfonb120OldAmount.setNbDecimal(getRandomNum());
 			
-		BeanCfonb120Movement beanCfonb120Movement = generateMovements("00010");
-		BeanCfonb120Movement beanCfonb120Movement2 = generateMovements("00011");
+		BeanCfonb120Movement beanCfonb120Movement = generateMovements(getRandomNum());
+		BeanCfonb120Movement beanCfonb120Movement2 = generateMovements(getRandomNum());
 		
 		BeanCfonb120NewAmount beanCfonb120NewAmount = new BeanCfonb120NewAmount();
 		beanCfonb120NewAmount.setTypeEnregistrementCode("07");
+		beanCfonb120NewAmount.setSoldeDate(new Date());
+		beanCfonb120NewAmount.setSoldeMontant(getRandomNum());
+		beanCfonb120NewAmount.setNumCompte(getRandomAlphaNum());
+		beanCfonb120NewAmount.setNbDecimal(getRandomNum());
+		beanCfonb120NewAmount.setCodeBanque(getRandomNum());
+		beanCfonb120NewAmount.setDevise(getRandomAlphaNum());
+		beanCfonb120NewAmount.setCodeGuichet(getRandomNum());
 		
 		beanCfonb120 = new BeanCfonb120();
 		beanCfonb120.setOldAmount(beanCfonb120OldAmount);
@@ -46,13 +72,29 @@ public class Cfonb120Test {
 		BeanCfonb120Movement beanCfonb120Movement = new BeanCfonb120Movement();
 		beanCfonb120Movement.setTypeEnregistrementCode("04");
 		beanCfonb120Movement.setCodeBanque(codeBanque);
-		beanCfonb120Movement.setOperationInterneCode("00000000000000000000000");
+		beanCfonb120Movement.setOperationInterneCode(getRandomAlphaNum());
+		beanCfonb120Movement.setMontantMvt(getRandomNum());
+		beanCfonb120Movement.setOperationInterBancCode(getRandomNum());
+		beanCfonb120Movement.setNumCompte(getRandomAlphaNum());
+		beanCfonb120Movement.setNbDecimal(getRandomNum());
+		beanCfonb120Movement.setLibelle(getRandomAlphaNum());
+		beanCfonb120Movement.setCodeGuichet(getRandomNum());
+		beanCfonb120Movement.setNumEcriture(getRandomNum());
 		return beanCfonb120Movement;
 	}
 
 	private static BeanCfonb120Additional generateAdditionals() {
 		BeanCfonb120Additional beanCfonb120Additional = new BeanCfonb120Additional();
 		beanCfonb120Additional.setTypeEnregistrementCode("05");
+		beanCfonb120Additional.setOperationInterBancCode(getRandomNum());
+		beanCfonb120Additional.setNumCompte(getRandomAlphaNum());
+		beanCfonb120Additional.setNbDecimal(getRandomNum());
+		beanCfonb120Additional.setCodeBanque(getRandomNum());
+		beanCfonb120Additional.setDevise(getRandomAlphaNum());
+		beanCfonb120Additional.setQualifiantDetail(getRandomAlphaNum());
+		beanCfonb120Additional.setLibelleDetail(getRandomAlphaNum());
+		beanCfonb120Additional.setCodeGuichet(getRandomNum());
+		beanCfonb120Additional.setOperationDate(new Date());
 		return beanCfonb120Additional;
 	}
 
@@ -68,6 +110,7 @@ public class Cfonb120Test {
 		File output = WriterCfonb.setBeanCfonb120ToFile(beanCfonb120);
 		assertTrue(output.exists());
 		assertTrue(output.isFile());
+		ReaderCfonb.getBeanCfonb120FromFile(output);
 		assertTrue(output.delete());
 	}
 	

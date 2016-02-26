@@ -14,6 +14,7 @@ import main.java.org.bankio.bean.BeanCfonb160Recipient;
 import main.java.org.bankio.bean.BeanCfonb160RecipientAdditional;
 import main.java.org.bankio.bean.BeanCfonb160Sender;
 import main.java.org.bankio.bean.BeanCfonb160Total;
+import main.java.org.bankio.reader.ReaderCfonb;
 import main.java.org.bankio.writer.WriterCfonb;
 
 public class Cfonb160Test {
@@ -64,6 +65,7 @@ public class Cfonb160Test {
 		File output = WriterCfonb.setBeanCfonb160ToFile(beanCfonb160);
 		assertTrue(output.exists());
 		assertTrue(output.isFile());
+		ReaderCfonb.getBeanCfonb160FromFile(output);
 		assertTrue(output.delete());
 	}
 	
