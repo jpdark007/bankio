@@ -46,6 +46,8 @@ public class BeanCfonb120Movement {
 	
     private List<BeanCfonb120Additional> additionals = new ArrayList<BeanCfonb120Additional>();
 
+	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
