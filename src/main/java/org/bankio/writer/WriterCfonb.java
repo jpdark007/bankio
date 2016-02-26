@@ -15,16 +15,21 @@ import org.beanio.StreamFactory;
 import main.java.org.bankio.bean.BeanCfonb120;
 import main.java.org.bankio.bean.BeanCfonb120Additional;
 import main.java.org.bankio.bean.BeanCfonb120Movement;
-import main.java.org.bankio.reader.BeanReaderCfonb;
+import main.java.org.bankio.bean.BeanCfonb160;
+import main.java.org.bankio.bean.BeanCfonb160Recipient;
+import main.java.org.bankio.bean.BeanCfonb160RecipientAdditional;
+import main.java.org.bankio.reader.ReaderCfonb;
 
-public class BeanWriterCfonb {
+public class WriterCfonb {
 	private static final String CFONB120 = "cfonb120";
 	private static final String CFONB120_XML = "cfonb120.xml";
-
+	private static final String CFONB160 = "cfonb160";
+	private static final String CFONB160_XML = "cfonb160.xml";
+	
 	public static void setBeanCfonb120ToFile(BeanCfonb120 beanCfonb120) throws BeanIOConfigurationException, IOException {
 	        // create a StreamFactory
 	        StreamFactory factory = StreamFactory.newInstance();
-	        factory.load(BeanReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB120_XML));
+	        factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB120_XML));
 	        
 	        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	        Date date = new Date();
@@ -45,7 +50,35 @@ public class BeanWriterCfonb {
 	        
 	        writer.write(beanCfonb120.getNewAmount());
 	        
-	        writer.flush();
-	        writer.close();
+	        closeWriter(writer);
 	    }
+
+	public static void setBeanCfonb160ToFile(BeanCfonb160 beanCfonb160) throws BeanIOConfigurationException, IOException {
+        // create a StreamFactory
+        StreamFactory factory = StreamFactory.newInstance();
+        factory.load(ReaderCfonb.class.getClassLoader().getResourceAsStream(CFONB160_XML));
+        
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+        Date date = new Date();
+        
+        // set writer mapping file
+        BeanWriter writer = factory.createWriter(CFONB160, new File(CFONB160 + dateFormat.format(date)));
+        
+        writer.write(beanCfonb160.getSender());
+        
+        HashMap<Integer, BeanCfonb160Recipient> beanCfonb160Recipients = beanCfonb160.getRecipients();
+        for (BeanCfonb160Recipient beanCfonb160Recipient : beanCfonb160Recipients.values()) {
+        	writer.write(beanCfonb160Recipient);
+        	writer.write(beanCfonb160Recipient.getRecipientAdditional());
+        }
+        
+        writer.write(beanCfonb160.getTotal());
+        
+        closeWriter(writer);
+    }
+	
+	private static void closeWriter(BeanWriter writer) {
+		writer.flush();
+		writer.close();
+	}
 }
