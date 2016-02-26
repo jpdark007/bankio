@@ -1,6 +1,7 @@
 package main.java.org.bankio.bean;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class BeanCfonb120Movement {
@@ -23,11 +24,11 @@ public class BeanCfonb120Movement {
 
 	private String operationInterBancCode;
 
-	private String operationDate;
+	private Date operationDate;
 
 	private String rejetMotifCode;
 
-	private String valeurDate;
+	private Date valeurDate;
 
 	private String libelle;
 
@@ -264,11 +265,11 @@ public class BeanCfonb120Movement {
 		this.operationInterBancCode = operationInterBancCode;
 	}
 
-	public String getOperationDate() {
+	public Date getOperationDate() {
 		return operationDate;
 	}
 
-	public void setOperationDate(String operationDate) {
+	public void setOperationDate(Date operationDate) {
 		this.operationDate = operationDate;
 	}
 
@@ -280,11 +281,11 @@ public class BeanCfonb120Movement {
 		this.rejetMotifCode = rejetMotifCode;
 	}
 
-	public String getValeurDate() {
+	public Date getValeurDate() {
 		return valeurDate;
 	}
 
-	public void setValeurDate(String valeurDate) {
+	public void setValeurDate(Date valeurDate) {
 		this.valeurDate = valeurDate;
 	}
 

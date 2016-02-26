@@ -1,5 +1,7 @@
 package main.java.org.bankio.bean;
 
+import java.util.Date;
+
 public class BeanCfonb120Additional {
 
 	private String typeEnregistrementCode;
@@ -20,7 +22,7 @@ public class BeanCfonb120Additional {
 
 	private String operationInterBancCode;
 
-	private String operationDate;
+	private Date operationDate;
 
 	private String zone2;
 	
@@ -94,11 +96,11 @@ public class BeanCfonb120Additional {
 		this.operationInterBancCode = operationInterBancCode;
 	}
 
-	public String getOperationDate() {
+	public Date getOperationDate() {
 		return operationDate;
 	}
 
-	public void setOperationDate(String operationDate) {
+	public void setOperationDate(Date operationDate) {
 		this.operationDate = operationDate;
 	}
 
