@@ -8,7 +8,7 @@
 			<!-- 'rid' indicates this field is used to identify the record -->
 			<field name="codeEnregistrement" rid="true" literal="03" length="2" />
 			<field name="codeOperation" length="2" />
-			<field name="zone1" length="8" />
+			<field name="reserve1" length="8" />
 			<field name="numeroEmetteur" length="6" />
 			<field name="reserve2" length="1" />
 			<field name="reserve3" length="6" />
@@ -45,7 +45,7 @@
             <field name="reserve2" length="6" />
 		</record>
 
-        <record name="BeanCfonb160RecipientAdditional" class="main.java.org.bankio.bean.BeanCfonb160Recipient" occurs="0+">
+        <record name="BeanCfonb160RecipientAdditional" class="main.java.org.bankio.bean.BeanCfonb160RecipientAdditional" occurs="0+">
             <field name="codeEnregistrement" rid="true" literal="07" length="2" />
             <field name="codeOperation" length="2" />
             <field name="reserve1" length="8" />

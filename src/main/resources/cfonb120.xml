@@ -7,14 +7,14 @@
 		<record name="beanCfonb120OldAmount" class="main.java.org.bankio.bean.BeanCfonb120OldAmount" occurs="1">
 			<!-- 'rid' indicates this field is used to identify the record -->
 			<field name="typeEnregistrementCode" rid="true" literal="01" length="2" />
-			<field name="codeBanque" length="5" />
-			<field name="zone1" length="4" />
-			<field name="codeGuichet" length="5" />
-			<field name="devise" length="3" />
-			<field name="nbDecimal" length="1" />
-			<field name="zone2" length="1" />
-			<field name="numCompte" length="11" />
-			<field name="zone3" length="2" />
+			<field name="codeBanque" length="5"  justify="right" padding="0"/>
+			<field name="zone1" length="4"  justify="right" padding="0"/>
+			<field name="codeGuichet" length="5" justify="right" padding="0" />
+			<field name="devise" length="3"  justify="right" padding="0"/>
+			<field name="nbDecimal" length="1" justify="right" padding="0" />
+			<field name="zone2" length="1"  justify="right" padding="0"/>
+			<field name="numCompte" length="11"  justify="right" padding="0"/>
+			<field name="zone3" length="2"  justify="right" padding="0"/>
 			<field name="soldeDate" length="6" type="date" format="ddMMyy"/>
 			<field name="zone4" length="50" />
 			<field name="soldeMontant" length="14" />
