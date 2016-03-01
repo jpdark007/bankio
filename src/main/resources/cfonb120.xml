@@ -39,7 +39,7 @@ alphanumériques et alphabétiques sont cadrées à gauche et complétées si be
             <field name="valeurDate"  length="6"  type="date" format="ddMMyy"/>
             <field name="libelle" length="31"  required="true"/>
             <field name="zone2" length="2" />
-            <field name="numEcriture" length="7" justify="right" padding="0" required="true" />
+            <field name="numEcriture" length="7" justify="right" keepPadding="true" required="true"/>
             <field name="indiceExoneration" length="1" />
             <field name="indiceIndispo" length="1" />
             <field name="montantMvt" length="14" justify="right" padding="0" required="true" />
