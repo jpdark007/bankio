@@ -22,7 +22,7 @@ import main.java.org.bankio.writer.WriterCfonb;
 
 public class Cfonb120Test {
 	
-	private static BeanCfonb120 beanCfonb120;
+	private static  BeanCfonb120 beanCfonb120;
 		
 	private static String getRandomNum() {
 		Random rand = new Random();
@@ -43,7 +43,7 @@ public class Cfonb120Test {
 		beanCfonb120OldAmount.setDevise(getRandomAlphaNum());
 		beanCfonb120OldAmount.setCodeGuichet(getRandomNum());
 		beanCfonb120OldAmount.setSoldeMontant(getRandomNum());
-		beanCfonb120OldAmount.setNbDecimal(getRandomNum());
+		beanCfonb120OldAmount.setNbDecimal("2");
 			
 		BeanCfonb120Movement beanCfonb120Movement = generateMovements(getRandomNum());
 		BeanCfonb120Movement beanCfonb120Movement2 = generateMovements(getRandomNum());
@@ -53,7 +53,7 @@ public class Cfonb120Test {
 		beanCfonb120NewAmount.setSoldeDate(new Date());
 		beanCfonb120NewAmount.setSoldeMontant(getRandomNum());
 		beanCfonb120NewAmount.setNumCompte(getRandomAlphaNum());
-		beanCfonb120NewAmount.setNbDecimal(getRandomNum());
+		beanCfonb120NewAmount.setNbDecimal("2");
 		beanCfonb120NewAmount.setCodeBanque(getRandomNum());
 		beanCfonb120NewAmount.setDevise(getRandomAlphaNum());
 		beanCfonb120NewAmount.setCodeGuichet(getRandomNum());
@@ -65,7 +65,7 @@ public class Cfonb120Test {
 		beanCfonb120.addAdditionnalToMovement(beanCfonb120Movement.hashCode(), generateAdditionals());
 		beanCfonb120.addAdditionnalToMovement(beanCfonb120Movement2.hashCode(), generateAdditionals());
 
-		beanCfonb120.setNewAmount(beanCfonb120NewAmount);
+		beanCfonb120.setNewAmount(beanCfonb120NewAmount);		
 	}
 
 	private static BeanCfonb120Movement generateMovements(String codeBanque) {
@@ -76,7 +76,7 @@ public class Cfonb120Test {
 		beanCfonb120Movement.setMontantMvt(getRandomNum());
 		beanCfonb120Movement.setOperationInterBancCode(getRandomNum());
 		beanCfonb120Movement.setNumCompte(getRandomAlphaNum());
-		beanCfonb120Movement.setNbDecimal(getRandomNum());
+		beanCfonb120Movement.setNbDecimal("2");
 		beanCfonb120Movement.setLibelle(getRandomAlphaNum());
 		beanCfonb120Movement.setCodeGuichet(getRandomNum());
 		beanCfonb120Movement.setNumEcriture(getRandomNum());
@@ -88,7 +88,7 @@ public class Cfonb120Test {
 		beanCfonb120Additional.setTypeEnregistrementCode("05");
 		beanCfonb120Additional.setOperationInterBancCode(getRandomNum());
 		beanCfonb120Additional.setNumCompte(getRandomAlphaNum());
-		beanCfonb120Additional.setNbDecimal(getRandomNum());
+		beanCfonb120Additional.setNbDecimal("2");
 		beanCfonb120Additional.setCodeBanque(getRandomNum());
 		beanCfonb120Additional.setDevise(getRandomAlphaNum());
 		beanCfonb120Additional.setQualifiantDetail(getRandomAlphaNum());
@@ -106,6 +106,9 @@ public class Cfonb120Test {
 		assertNotNull(beanCfonb120.getOldAmount());
 		assertTrue(beanCfonb120.equals(beanCfonb120));
 		assertEquals(beanCfonb120.toString(), beanCfonb120.toString());
+		assertTrue(beanCfonb120.getMovements().equals(beanCfonb120.getMovements()));
+		assertEquals(beanCfonb120.getMovements().toString(), beanCfonb120.getMovements().toString());
+
 		
 		File output = WriterCfonb.setBeanCfonb120ToFile(beanCfonb120);
 		assertTrue(output.exists());
