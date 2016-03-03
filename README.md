@@ -13,7 +13,9 @@ In addition to using a new format, migrating to [SEPA](https://en.wikipedia.org/
 # Format supported
  - CFONB120 (almost done)
  - CFONB160 (in progress)
- - Customer Credit Transfer pain.001.001.03 (in study)
+ - Customer Credit Transfer pain.001.001 (in study)
+- Bank To Customer Debit Credit Notification camt.054.001 (in study)
+- Customer Direct Debit Initiation pain.008.001  (in study)
  
 ## Usage
 ## CFONB120 Reader
