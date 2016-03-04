@@ -14,8 +14,8 @@ import main.java.org.bankio.bean.BeanCfonb160Recipient;
 import main.java.org.bankio.bean.BeanCfonb160RecipientAdditional;
 import main.java.org.bankio.bean.BeanCfonb160Sender;
 import main.java.org.bankio.bean.BeanCfonb160Total;
-import main.java.org.bankio.reader.ReaderCfonb;
-import main.java.org.bankio.writer.WriterCfonb;
+import main.java.org.bankio.cfonb.ReaderCfonb;
+import main.java.org.bankio.cfonb.WriterCfonb;
 
 public class Cfonb160Test {
 	

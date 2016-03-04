@@ -17,8 +17,8 @@ import main.java.org.bankio.bean.BeanCfonb120Additional;
 import main.java.org.bankio.bean.BeanCfonb120Movement;
 import main.java.org.bankio.bean.BeanCfonb120NewAmount;
 import main.java.org.bankio.bean.BeanCfonb120OldAmount;
-import main.java.org.bankio.reader.ReaderCfonb;
-import main.java.org.bankio.writer.WriterCfonb;
+import main.java.org.bankio.cfonb.ReaderCfonb;
+import main.java.org.bankio.cfonb.WriterCfonb;
 
 public class Cfonb120Test {
 	
