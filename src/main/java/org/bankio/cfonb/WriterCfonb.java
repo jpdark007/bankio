@@ -1,4 +1,4 @@
-package main.java.org.bankio.writer;
+package main.java.org.bankio.cfonb;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,6 @@ import main.java.org.bankio.bean.BeanCfonb120Additional;
 import main.java.org.bankio.bean.BeanCfonb120Movement;
 import main.java.org.bankio.bean.BeanCfonb160;
 import main.java.org.bankio.bean.BeanCfonb160Recipient;
-import main.java.org.bankio.reader.ReaderCfonb;
 
 public class WriterCfonb {
 	private static final String CFONB120 = "cfonb120";

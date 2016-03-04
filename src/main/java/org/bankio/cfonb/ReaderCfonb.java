@@ -1,4 +1,4 @@
-package main.java.org.bankio.reader;
+package main.java.org.bankio.cfonb;
 
 import java.io.File;
 import java.io.FileInputStream;
