@@ -2,6 +2,8 @@
 ##  A Java library to manage file format for banking interchange such as CFBON120, CFONB160, SEPA  iso/20022 ... 
  [![Build Status](https://travis-ci.org/jpdark007/bankio.svg?branch=master)](https://travis-ci.org/jpdark007/bankio)
 [![codecov.io](https://codecov.io/github/jpdark007/bankio/coverage.svg?branch=master)](https://codecov.io/github/jpdark007/bankio?branch=master)
+ ![License](https://img.shields.io/hexpm/l/plug.svg)
+
 
 # Introduction
 [CFONB](http://fr.wikipedia.org/wiki/CFONB) are French legacy files formats for banking interchange, made by the CFONB (Comité français d'organisation et de normalisation bancaires). The specifications of CFONB files can be found on the [CFONB website](http://www.cfonb.org).
