@@ -1,8 +1,8 @@
 # bankio
 ##  A Java library to manage file format for banking interchange such as CFBON120, CFONB160, SEPA  iso/20022 ... 
- [![Build Status](https://travis-ci.org/jpdark007/bankio.svg?branch=master)](https://travis-ci.org/jpdark007/bankio)
+[![Build Status](https://travis-ci.org/jpdark007/bankio.svg?branch=master)](https://travis-ci.org/jpdark007/bankio)
 [![codecov.io](https://codecov.io/github/jpdark007/bankio/coverage.svg?branch=master)](https://codecov.io/github/jpdark007/bankio?branch=master)
- ![License](https://img.shields.io/hexpm/l/plug.svg)
+[![License](https://img.shields.io/hexpm/l/plug.svg)](https://raw.githubusercontent.com/jpdark007/bankio/master/LICENSE)
 
 
 # Introduction
