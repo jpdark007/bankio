@@ -20,18 +20,9 @@ import main.java.org.bankio.bean.BeanCfonb120OldAmount;
 import main.java.org.bankio.cfonb.ReaderCfonb;
 import main.java.org.bankio.cfonb.WriterCfonb;
 
-public class Cfonb120Test {
+public class Cfonb120Test extends CfonbTest{
 	
 	private static  BeanCfonb120 beanCfonb120;
-		
-	private static String getRandomNum() {
-		Random rand = new Random();
-		return String.valueOf(rand.nextInt(500000000) + 1);
-	}
-	
-	private static String getRandomAlphaNum() {
-		return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	}
 	
 	@BeforeClass
 	public static  void onceExecutedBeforeAll() {

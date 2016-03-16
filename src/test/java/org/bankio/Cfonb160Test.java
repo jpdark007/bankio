@@ -17,7 +17,7 @@ import main.java.org.bankio.bean.BeanCfonb160Total;
 import main.java.org.bankio.cfonb.ReaderCfonb;
 import main.java.org.bankio.cfonb.WriterCfonb;
 
-public class Cfonb160Test {
+public class Cfonb160Test  extends CfonbTest{
 	
 	private static BeanCfonb160 beanCfonb160;
 	
@@ -25,13 +25,20 @@ public class Cfonb160Test {
 	public static  void onceExecutedBeforeAll() {
 		BeanCfonb160Sender beanCfonb160Sender = new BeanCfonb160Sender();
 		beanCfonb160Sender.setCodeEnregistrement("03");
+		beanCfonb160Sender.setNomRemettant(getRandomAlphaNum());
+		beanCfonb160Sender.setCodeOperation(getRandomNum());
+		beanCfonb160Sender.setEmetteurCodeEtablissement(getRandomNum());
+		beanCfonb160Sender.setIndiceMonnaieOrigine(getRandomAlphaNum());
+		beanCfonb160Sender.setEmetteurCodeGuichet(getRandomNum());
+		beanCfonb160Sender.setEmetteurNumeroCompte(getRandomNum());
 		
-		BeanCfonb160Recipient beanCfonb160Recipient = getRecipient("0000");
-		BeanCfonb160Recipient beanCfonb160Recipient2 = getRecipient("0001");
+		BeanCfonb160Recipient beanCfonb160Recipient = generateRecipient("0000");
+		BeanCfonb160Recipient beanCfonb160Recipient2 = generateRecipient("0001");
 		
 				
 		BeanCfonb160Total beanCfonb160Total = new BeanCfonb160Total();
 		beanCfonb160Total.setCodeEnregistrement("08");
+		beanCfonb160Total.setCodeOperation(getRandomNum());
 		
 		beanCfonb160 = new BeanCfonb160();
 		beanCfonb160.addRecipient(beanCfonb160Recipient.hashCode(), beanCfonb160Recipient);
@@ -42,9 +49,26 @@ public class Cfonb160Test {
 		beanCfonb160.setTotal(beanCfonb160Total);
 	}
 
+	private static BeanCfonb160Recipient generateRecipient(final String code) {
+		BeanCfonb160Recipient beanCfonb160Recipient = getRecipient(code);
+		beanCfonb160Recipient.setNomDestinataire(getRandomAlphaNum());
+		beanCfonb160Recipient.setLibelle(getRandomAlphaNum());
+		beanCfonb160Recipient.setDestinataireCodeGuichet(getRandomNum());
+		beanCfonb160Recipient.setDestinataireCodeEtablissement(getRandomNum());
+		beanCfonb160Recipient.setDestinataireNumeroCompte(getRandomNum());
+		return beanCfonb160Recipient;
+	}
+
 	private static BeanCfonb160RecipientAdditional getRecipientAdditional() {
 		BeanCfonb160RecipientAdditional beanCfonb160RecipientAdditional = new  BeanCfonb160RecipientAdditional();
 		beanCfonb160RecipientAdditional.setCodeEnregistrement("07");
+		beanCfonb160RecipientAdditional.setNomDestinataire(getRandomAlphaNum());
+		beanCfonb160RecipientAdditional.setReferenceOperation(getRandomNum());
+		beanCfonb160RecipientAdditional.setCodeOperation(getRandomNum());
+		beanCfonb160RecipientAdditional.setLibelle(getRandomAlphaNum());
+		beanCfonb160RecipientAdditional.setDestinataireCodeEtablissement(getRandomNum());
+		beanCfonb160RecipientAdditional.setDestinataireCodeGuichet(getRandomNum());
+		beanCfonb160RecipientAdditional.setDestinataireNumeroCompte(getRandomNum());
 		return beanCfonb160RecipientAdditional;
 	}
 
