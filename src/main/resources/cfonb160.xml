@@ -6,65 +6,65 @@
 		<!-- 'class' binds the header record to a BeanCfonb160Sender -->
 		<record name="BeanCfonb160Sender" class="main.java.org.bankio.bean.BeanCfonb160Sender" occurs="1">
 			<!-- 'rid' indicates this field is used to identify the record -->
-			<field name="codeEnregistrement" rid="true" literal="03" length="2" />
-			<field name="codeOperation" length="2" />
+			<field name="codeEnregistrement" rid="true" literal="03" length="2" required="true"/>
+			<field name="codeOperation" length="2" required="true"/>
 			<field name="reserve1" length="8" />
 			<field name="numeroEmetteur" length="6" />
 			<field name="reserve2" length="1" />
 			<field name="reserve3" length="6" />
 			<field name="dateReglement" length="5" type="date" format="ddMMy"/>
-			<field name="nomRemettant" length="24" />
+			<field name="nomRemettant" length="24" required="true"/>
 			<field name="referenceRemiseClient" length="7" />
 			<field name="reserve4" length="17" />
 			<field name="reserve5" length="2" />
-			<field name="indiceMonnaieOrigine" length="1" />
+			<field name="indiceMonnaieOrigine" length="1" required="true"/>
 			<field name="reserve6" length="5" />
-			<field name="emetteurCodeGuichet" length="5" />
-			<field name="emetteurNumeroCompte" length="11" />
+			<field name="emetteurCodeGuichet" length="5" required="true"/>
+			<field name="emetteurNumeroCompte" length="11" required="true"/>
 			<field name="reserve7" length="16" />
 			<field name="reserve8" length="31" />
-			<field name="emetteurCodeEtablissement" length="5" />
+			<field name="emetteurCodeEtablissement" length="5" required="true"/>
 			<field name="reserve9" length="6" />
 			
 		</record>
 
 		<record name="BeanCfonb160Recipient" class="main.java.org.bankio.bean.BeanCfonb160Recipient" occurs="1+">
-			<field name="codeEnregistrement" rid="true" literal="06" length="2" />
-            <field name="codeOperation" length="2" />
+			<field name="codeEnregistrement" rid="true" literal="06" length="2" required="true"/>
+            <field name="codeOperation" length="2" required="true"/>
             <field name="reserve1" length="8" />
             <field name="numeroEmetteur" length="6" />
             <field name="referenceOperation" length="12" />
-            <field name="nomDestinataire" length="24" />
+            <field name="nomDestinataire" length="24" required="true"/>
             <field name="libelleDomiciliation" length="24" />
             <field name="balance" length="8" />
-            <field name="destinataireCodeGuichet" length="5" />
-            <field name="destinataireNumeroCompte"  length="11" />
-            <field name="montantVirement" length="16" />
-            <field name="libelle" length="31" />
-            <field name="destinataireCodeEtablissement" length="5" />
+            <field name="destinataireCodeGuichet" length="5" required="true"/>
+            <field name="destinataireNumeroCompte"  length="11" required="true"/>
+            <field name="montantVirement" length="16" justify="right" padding="0" required="true"/>
+            <field name="libelle" length="31" required="true"/>
+            <field name="destinataireCodeEtablissement" length="5" required="true"/>
             <field name="reserve2" length="6" />
 		</record>
 
         <record name="BeanCfonb160RecipientAdditional" class="main.java.org.bankio.bean.BeanCfonb160RecipientAdditional" occurs="0+">
-            <field name="codeEnregistrement" rid="true" literal="07" length="2" />
-            <field name="codeOperation" length="2" />
+            <field name="codeEnregistrement" rid="true" literal="07" length="2" required="true"/>
+            <field name="codeOperation" length="2" required="true"/>
             <field name="reserve1" length="8" />
             <field name="numeroEmetteur" length="6" />
-            <field name="referenceOperation" length="12" />
-            <field name="nomDestinataire" length="24" />
+            <field name="referenceOperation" length="12" required="true"/>
+            <field name="nomDestinataire" length="24" required="true"/>
             <field name="libelleDomiciliation" length="24" />
             <field name="balance" length="8" />
-            <field name="destinataireCodeGuichet" length="5" />
-            <field name="destinataireNumeroCompte"  length="11" />
-            <field name="montantVirement" length="16" />
-            <field name="libelle" length="31" />
-            <field name="destinataireCodeEtablissement" length="5" />
+            <field name="destinataireCodeGuichet" length="5" required="true"/>
+            <field name="destinataireNumeroCompte"  length="11" required="true"/>
+            <field name="montantVirement" length="16" justify="right" padding="0" required="true"/>
+            <field name="libelle" length="31" required="true"/>
+            <field name="destinataireCodeEtablissement" length="5" required="true"/>
             <field name="reserve2" length="6" />
         </record>
 
         <record name="BeanCfonb160Total" class="main.java.org.bankio.bean.BeanCfonb160Total" occurs="1">
-            <field name="codeEnregistrement" rid="true" literal="08" length="2" />
-            <field name="codeOperation" length="2" />
+            <field name="codeEnregistrement" rid="true" literal="08" length="2" required="true"/>
+            <field name="codeOperation" length="2" required="true"/>
             <field name="reserve1" length="8" />
             <field name="numeroEmetteur" length="6" />
             <field name="reserve2" length="12" />
@@ -73,7 +73,7 @@
             <field name="reserve5" length="8" />
             <field name="reserve6" length="5" />
             <field name="reserve7"  length="11" />
-            <field name="montantTotalRemise" length="16" />
+            <field name="montantTotalRemise" length="16"  justify="right" padding="0" required="true"/>
             <field name="reserve8" length="31" />
             <field name="reserve9" length="5" />
              <field name="reserve10" length="6" />
